@@ -2,63 +2,101 @@ import java.util.Scanner;
 
 public class Practice_Problem {
     public static void main(String[] args) {
-        // area of a triangle:
         try (Scanner sc = new Scanner(System.in)) {
-            System.out.print("base=");
-            double base = sc.nextDouble();
+            /*
+             * Write a program to check whether a given
+             * input is a positive integer or not:
+             */
+            // System.out.print("input your num:");
+            // int num = sc.nextInt();
+            // if (num < 0) {
+            // System.out.println("negetive number");
+            // } else {
+            // System.out.println("positive number");
+            // }
+            // System.out.println(" done!");
+            /*
+             * Write a program to check whether a given input is an odd or even number
+             */
+            // System.out.print("input your num:");
+            // int num2 = sc.nextInt();
+            // if (num2 % 2 == 0) {
+            // System.out.println("even number");
+            // } else {
+            // System.out.println("odd number");
+            // }
+            // System.out.println(" done!");
 
-            System.out.print("hight=");
-            double hight = sc.nextDouble();
+            /*
+             * Write a program to calculate grade of the following scenario:
+             * 0 - 39 : F
+             * 40 - 59 : C+
+             * 60 - 69 : B
+             * 70 - 79 : A-
+             * 80 - 89 : A
+             * 90+ : A+
+             */
 
-            double area = 0.5 * base * hight;
-            System.out.print("area=" + area);
+            // System.out.print("input your mark:");
+            // int mark = sc.nextInt();
+            // if (mark >= 90) {
+            // System.out.println("A+");
+            // }
+            // if (mark >= 80 && mark <= 89) {
+            // System.out.println("A");
+            // }
+            // if (mark >= 70 && mark <= 79) {
+            // System.out.println("A-");
+            // }
+            // if (mark >= 60 && mark <= 69) {
+            // System.out.println("B");
+            // }
+            // if (mark >= 40 && mark <= 59) {
+            // System.out.println("C+");
+            // }
+            // if (mark >= 0 && mark <= 39) {
+            // System.out.println("F");
+            // }
 
-            System.out.println(" done!");
+            // Build a simple calculator:
+            System.out.print("Input1 (integer a): ");
+            int a = sc.nextInt();
 
-            // volume of a ball:
-            double pi = 3.1416;
-            System.out.print("radius=");
-            double r = sc.nextDouble();
-            double cons = 4 / 3;
-            double vol = cons * pi * r * r;
-            System.out.print("volume=" + vol);
+            System.out.print("Input2 (integer b): ");
+            int b = sc.nextInt();
 
-            System.out.println("done!");
+            System.out.print("Input3 (operator +, -, *, /): ");
+            char op = sc.next().charAt(0);
 
-            // area of a circle:
-            System.out.print("radius=");
-            double r2 = sc.nextDouble();
-            System.out.print("area=" + pi * r2 * r2);
+            int result;
+            switch (op) {
+                case '+':
+                    result = a + b;
+                    System.out.println("Result: " + result);
+                    break;
 
-            System.out.println("done!");
+                case '-':
+                    result = a - b;
+                    System.out.println("Result: " + result);
+                    break;
 
-            // celsius to fahrenheit:
+                case '*':
+                    result = a * b;
+                    System.out.println("Result: " + result);
+                    break;
 
-            System.out.print("celsius:");
-            double C = sc.nextDouble();
-            System.out.print("fahrenheit:" + ((C * 9) / 5) + 32);
+                case '/':
+                    if (b == 0) {
+                        System.out.println("Error: Division by zero");
+                    } else {
+                        double divResult = (double) a / b;
+                        System.out.println("Result: " + divResult);
+                    }
+                    break;
 
-            System.out.println("done!");
-
-            // area of a equilateral triangle:
-            System.out.print("arm:");
-            double a = sc.nextDouble();
-            System.out.print("area:" + ((Math.sqrt(3) / 4) * a * a));
-
-            System.out.println("done!");
-
-            // Find the area of a triangle (2):
-            System.out.print("a:");
-            double a2 = sc.nextDouble();
-            System.out.print("b:");
-            double b = sc.nextDouble();
-            System.out.print("c:");
-            double c = sc.nextDouble();
-            double s = (a2 + b + c) / 2;
-            double ar = Math.sqrt(s * (s - a2) * (s - b) * (s - c));
-            System.out.print("ar:" + ar);
-
+                default:
+                    System.out.println("Invalid operator");
+            }
         }
-
     }
 }
